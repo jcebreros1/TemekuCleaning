@@ -1,0 +1,74 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  {% block title %}<title>Temeku Cleaning</title>{% endblock %}
+
+  <!-- Add additional CSS in static file -->
+  {% load static %}<link rel="stylesheet" href="{% static 'css/main.css' %}">
+  {% load static %}<link rel="stylesheet" href="{% static 'css/form.css' %}">
+  {% load static %}<link rel="stylesheet" href="{% static 'css/reset.css' %}">
+</head>
+<body>
+
+  <div id="header">
+  <br> 
+  {% load static %}<img src= "{% static 'images/Temeku_Cleaning_small.png' %}"></a> 
+  <ul>
+    <li><a href="{% url 'index' %}">Home</a></li>
+    <li><a href="{% url 'management' %}">Management</a></li>
+    <li><a href="{% url 'services' %}">Services</a></li>
+    <li><a href="{% url 'aboutus' %}">About Us</a></li>
+    <li><a href="{% url 'blog' %}">Blog</a></li>
+    <li class="last-item"><a href="{% url 'contactus' %}">Contact us</a></li>
+  </ul>
+  
+  <p>951.691.7640 <a href="contactus.html">elena@temeku-cleaning.com</a><br> 
+  <!--return the date from the view here-->
+  {{timedate}}
+  </p>
+</div>
+
+{% block subheader %}
+<div id="sub-header">
+        <h2>Temeku Cleaning</h2>
+        <p>
+  At Temeku Cleaning we are recognized for offering quality above expectation of cleaning services for residential and commercial. We are a locally owned cleaning service. Temeku Cleaning has been serving the Temecula and Murrieta Valley for years.
+        </p>
+</div>
+{% endblock %}
+<div id="content">
+    {% block content %}
+    
+    {% endblock %}
+    <div id="sidebar">
+        <h4>Information</h4>
+        <p>Best in cleaning </p>
+        <h4>Get in touch</h4>
+        <p>We are here when you need us</p>
+        <p><strong>Contact person:</strong> Elena <br /><strong>Mobile: 951.691.7640</strong><br> <strong>Email:elena@temekucleaning.com</strong> <a href="#"></a></p>
+        <h4>Our partners</h4>
+        <ul>
+            <li>N/A</li>
+        </ul>
+    </div>
+</div>
+
+  <div id="footer">
+        <ul>
+        <li class="first-item"><a href="#" class="active">Home</a></li>
+        <li><a href="management.html">Management</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contactus.html">Contact us</a></li>
+  </ul>
+  <p>Copyright &copy; 2018 temekucleaning.com. All rights reserved.</p>
+</div>
+</body>
+
+</html>

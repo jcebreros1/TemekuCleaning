@@ -1,0 +1,31 @@
+﻿{% extends "base_generic.html" %}
+
+{% block content %}
+<div id="main-content">
+<div id="stylized" class="mainstuff">
+<b> Tell me more about </b> <br> <br>
+<table border=0 width=100%>
+<td>
+<center>
+<a href="{% url 'houseservices' %}">
+<!--img src=temeku-house-cleaning.jpg><br-->
+{% load static %}<img src= "{% static 'images/temeku-house-cleaning.jpg' %}" style="width:200px;height:150px;"></a> <br>
+ House Keeping
+</center>
+</a>
+<td> -OR- </td>
+</td>
+<td>
+<a href="{% url 'officeservices' %}">
+<center><!--img src=temeku-office-cleaning.jpg><br-->
+	{% load static %}<img src= "{% static 'images/temeku-office-cleaning.jpg' %}" style="width:150px;height:200px;"></a> <br>
+Commercial Cleaning and Janitorial</center>
+</a> 
+</td>
+</table>
+<br> <br>
+<br>
+</div>
+</div>
+
+{% endblock %}
