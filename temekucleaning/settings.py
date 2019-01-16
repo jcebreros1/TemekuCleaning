@@ -20,8 +20,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'pt#i^-a6og*&v5doa!2!_i^5k2b3@$(5uiq#twgoc)vf9_)%24'
-import os
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -121,21 +119,11 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.0/howto/static-files/
-
-STATIC_URL = '/static/'
-
-"""EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'cebrerosjesus@gmail.com'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False
-EMAIL_PORT = 1025"""
-
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST_USER =  bool(os.environ.get('EMAIL_HOST_USER'))
+EMAIL_HOST_PASSWORD =  bool(os.environ.get('EMAIL_HOST_PASSWORD'))
+EMAIL_HOST =  bool(os.environ.get('EMAIL_HOST'))
+EMAIL_HOST_USER = bool(os.environ.get('EMAIL_HOST_USER'))
+EMAIL_HOST_PASSWORD = bool(os.environ.get('EMAIL_HOST_PASSWORD'))
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
