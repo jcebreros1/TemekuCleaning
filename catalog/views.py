@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .forms import ContactForm
 from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.template.loader import get_template
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
+from .forms import ContactForm
 
 # Create your views here.
 
@@ -107,6 +110,7 @@ def contactus(request):
                 'timedate': date,
             }
     return render(request, 'contactus.html', context=context)
+
 
 def houseservices(request):
     """View function for home page of site."""

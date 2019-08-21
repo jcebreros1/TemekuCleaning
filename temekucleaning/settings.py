@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'catalog.apps.CatalogConfig', 
+    'catalog.apps.CatalogConfig',
+    #'sendemail.apps.SendemailConfig', 
 ]
 
 MIDDLEWARE = [
@@ -118,14 +119,19 @@ USE_L10N = True
 
 USE_TZ = True
 
+EMAIL_PORT = 'localhost'
+EMAIL_HOST_USER = ''
+EMAIL_PORT = 25
+EMAIL_USE_TLS = False
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_HOST_USER =  bool(os.environ.get('EMAIL_HOST_USER'))
-EMAIL_HOST_PASSWORD =  bool(os.environ.get('EMAIL_HOST_PASSWORD'))
-EMAIL_HOST =  bool(os.environ.get('EMAIL_HOST'))
-EMAIL_HOST_USER = bool(os.environ.get('EMAIL_HOST_USER'))
-EMAIL_HOST_PASSWORD = bool(os.environ.get('EMAIL_HOST_PASSWORD'))
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+#EMAIL_HOST_USER =  bool(os.environ.get('EMAIL_HOST_USER'))
+#EMAIL_HOST_PASSWORD =  bool(os.environ.get('EMAIL_HOST_PASSWORD'))
+#EMAIL_HOST =  bool(os.environ.get('EMAIL_HOST'))
+#EMAIL_HOST_USER = bool(os.environ.get('EMAIL_HOST_USER'))
+#EMAIL_HOST_PASSWORD = bool(os.environ.get('EMAIL_HOST_PASSWORD'))
+#EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
 
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url
