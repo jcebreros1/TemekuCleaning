@@ -1,8 +1,11 @@
 Contact Name:
 {{contact_name}}
 
-Phone Number;
+Phone Number:
 {{phone}}
 
 Time Preference:
 {{time_preference}}
+
+Message:
+{{message}}
